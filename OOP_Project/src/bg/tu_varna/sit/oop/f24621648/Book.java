@@ -6,19 +6,19 @@ public class Book {
 	private String genre;
 	private String description;
 	private int year;
-	private String keyWords;
+	String[] tags;
 	private double rating;
-	private int uniqueNumber;
+	private String isbn;
 
-	public Book(String author, String title,String genre, String description, int year, String keyWords, double rating, int uniqueNumber){
+	public Book(String author, String title,String genre, String description, int year, String[] tags, double rating, String isbn){
 		this.author=author;
 		this.title=title;
 		this.genre=genre;
 		this.description=description;
 		this.year=year;
-		this.keyWords=keyWords;
+		this.tags=tags;
 		this.rating=rating;
-		this.uniqueNumber=uniqueNumber;
+		this.isbn=isbn;
 	}
 
 	public String getAuthor() {
@@ -41,15 +41,15 @@ public class Book {
 		return year;
 	}
 
-	public String getKeyWords() {
-		return keyWords;
+	public String[] getTags() {
+		return tags;
 	}
 
 	public double getRating() {
 		return rating;
 	}
 
-	public int getUniqueNumber() {
-		return uniqueNumber;
+	public String isbn() {
+		return isbn;
 	}
 }
