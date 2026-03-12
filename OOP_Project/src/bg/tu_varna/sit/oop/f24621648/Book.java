@@ -49,7 +49,17 @@ public class Book {
 		return rating;
 	}
 
-	public String isbn() {
+	public String getIsbn() {
 		return isbn;
+	}
+
+	@Override
+	public String toString() {
+		return "Title: " + title +
+				", Author: " + author +
+				", Genre: " + genre +
+				", Year: " + year +
+				", Rating: " + rating +
+				", ISBN: " + isbn;
 	}
 }
