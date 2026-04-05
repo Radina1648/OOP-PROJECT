@@ -11,7 +11,7 @@ public class BooksAllCommand implements Command {
 	@Override
 	public void execute(String input) {
 
-		if (library.getAllBooks().isEmpty()) {
+		if (!library.hasBooks()) {
 			System.out.println("No books available.");
 			return;
 		}

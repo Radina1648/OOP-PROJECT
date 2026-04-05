@@ -26,6 +26,8 @@ public class LoginCommand implements Command {
 		System.out.print("Password: ");
 		String password = scanner.nextLine();
 
+		System.out.println("*".repeat(password.length()));
+
 		System.out.println(userManager.login(username, password));
 	}
 }

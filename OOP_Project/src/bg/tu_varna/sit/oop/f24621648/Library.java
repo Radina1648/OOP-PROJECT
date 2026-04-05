@@ -42,6 +42,10 @@ public class Library {
 		return null;
 	}
 
+	public boolean hasBooks() {
+		return !books.isEmpty();
+	}
+
 	public List<Book> findByTitle(String title){
 
 		List<Book> result = new ArrayList<>();
