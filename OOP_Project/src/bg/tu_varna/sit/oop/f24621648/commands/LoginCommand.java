@@ -1,4 +1,6 @@
-package bg.tu_varna.sit.oop.f24621648;
+package bg.tu_varna.sit.oop.f24621648.commands;
+
+import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
 import java.util.Scanner;
 

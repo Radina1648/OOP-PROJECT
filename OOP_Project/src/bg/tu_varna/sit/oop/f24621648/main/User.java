@@ -1,4 +1,4 @@
-package bg.tu_varna.sit.oop.f24621648;
+package bg.tu_varna.sit.oop.f24621648.main;
 
 public class User {
     private String username;

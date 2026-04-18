@@ -1,4 +1,7 @@
-package bg.tu_varna.sit.oop.f24621648;
+package bg.tu_varna.sit.oop.f24621648.commands;
+
+import bg.tu_varna.sit.oop.f24621648.main.Book;
+import bg.tu_varna.sit.oop.f24621648.main.Library;
 
 import java.util.ArrayList;
 import java.util.List;
