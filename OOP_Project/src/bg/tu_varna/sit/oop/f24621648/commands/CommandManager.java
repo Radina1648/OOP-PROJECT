@@ -23,10 +23,16 @@ public class CommandManager {
 		commands.put("booksfind", booksFindCommand);
 		BooksAllCommand booksAllCommand=new BooksAllCommand(library);
 		commands.put("booksall", booksAllCommand);
+		BooksSortCommand booksSortCommand=new BooksSortCommand(library);
+		commands.put("bookssort", booksSortCommand);
 		LogoutCommand logoutCommand=new LogoutCommand(userManager);
 		commands.put("login", logoutCommand);
 		LoginCommand loginCommand=new LoginCommand(userManager, scanner);
 		commands.put("login", loginCommand);
+		UserAddCommand userAddCommand=new UserAddCommand(userManager);
+		commands.put("useradd", userAddCommand);
+		UserRemoveCommand userRemoveCommand=new UserRemoveCommand(userManager);
+		commands.put("userremove", userRemoveCommand);
 	}
 	public void process(String input)
 	{

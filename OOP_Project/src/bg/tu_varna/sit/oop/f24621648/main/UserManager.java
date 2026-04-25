@@ -46,4 +46,36 @@ public class UserManager {
 	public User getLoggedUser() {
 		return loggedUser;
 	}
+
+	public String addUser(String username, String password) {
+
+		if (loggedUser == null || !loggedUser.isAdmin()) {
+			return "Only admin can add users.";
+		}
+
+		if (users.containsKey(username)) {
+			return "User already exists.";
+		}
+
+		users.put(username, new User(username, password, false));
+		return "User added successfully.";
+	}
+
+	public String removeUser(String username) {
+
+		if (loggedUser == null || !loggedUser.isAdmin()) {
+			return "Only admin can remove users.";
+		}
+
+		if (!users.containsKey(username)) {
+			return "User not found.";
+		}
+
+		if (username.equals("admin")) {
+			return "Admin cannot be removed.";
+		}
+
+		users.remove(username);
+		return "User removed successfully.";
+	}
 }

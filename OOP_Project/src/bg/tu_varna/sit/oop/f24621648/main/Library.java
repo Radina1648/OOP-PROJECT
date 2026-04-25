@@ -1,7 +1,6 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Library {
 
@@ -89,5 +88,38 @@ public class Library {
 		}
 
 		return result;
+	}
+
+	public List<Book> sortBooks(String option, String order) {
+
+		List<Book> sortedBooks = new ArrayList<>(books);
+
+		Map<String, Comparator<Book>> sortOptions = new HashMap<>();
+
+		sortOptions.put("title",
+				Comparator.comparing(Book::getTitle, String.CASE_INSENSITIVE_ORDER));
+
+		sortOptions.put("author",
+				Comparator.comparing(Book::getAuthor, String.CASE_INSENSITIVE_ORDER));
+
+		sortOptions.put("year",
+				Comparator.comparingInt(Book::getYear));
+
+		sortOptions.put("rating",
+				Comparator.comparingDouble(Book::getRating));
+
+		Comparator<Book> comparator = sortOptions.get(option.toLowerCase());
+
+		if (comparator == null) {
+			return sortedBooks;
+		}
+
+		if (order.equalsIgnoreCase("desc")) {
+			comparator = comparator.reversed();
+		}
+
+		sortedBooks.sort(comparator);
+
+		return sortedBooks;
 	}
 }
