@@ -25,6 +25,10 @@ public class CommandManager {
 		commands.put("booksall", booksAllCommand);
 		BooksSortCommand booksSortCommand=new BooksSortCommand(library);
 		commands.put("bookssort", booksSortCommand);
+		BooksAddCommand booksAddCommand=new BooksAddCommand(library, userManager, scanner);
+		commands.put("booksaddcommand", booksAddCommand);
+		BooksRemoveCommand booksRemoveCommand=new BooksRemoveCommand(library, userManager);
+		commands.put("booksremove", booksAddCommand);
 		LogoutCommand logoutCommand=new LogoutCommand(userManager);
 		commands.put("login", logoutCommand);
 		LoginCommand loginCommand=new LoginCommand(userManager, scanner);
