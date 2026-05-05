@@ -1,5 +1,6 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
+import java.io.*;
 import java.util.*;
 
 public class Library {
@@ -121,5 +122,65 @@ public class Library {
 		sortedBooks.sort(comparator);
 
 		return sortedBooks;
+	}
+
+	public void clear() {
+		books.clear();
+	}
+
+	public void loadFromFile(String fileName) {
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+
+			books.clear();
+
+			String line;
+
+			while ((line = reader.readLine()) != null) {
+
+				String[] parts = line.split(";");
+
+				String author = parts[0];
+				String title = parts[1];
+				String genre = parts[2];
+				String description = parts[3];
+				int year = Integer.parseInt(parts[4]);
+				String[] tags = parts[5].split(",");
+				double rating = Double.parseDouble(parts[6]);
+				String isbn = parts[7];
+
+				Book book = new Book(author, title, genre, description, year, tags, rating, isbn);
+
+				books.add(book);
+			}
+
+		} catch (IOException e) {
+			System.out.println("Error reading file.");
+		}
+	}
+
+	public void saveToFile(String fileName) {
+
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+
+			for (Book b : books) {
+
+				String line =
+						b.getAuthor() + ";" +
+								b.getTitle() + ";" +
+								b.getGenre() + ";" +
+								b.getDescription() + ";" +
+								b.getYear() + ";" +
+								String.join(",", b.getTags()) + ";" +
+								b.getRating() + ";" +
+								b.getIsbn();
+
+				writer.write(line);
+				writer.newLine();
+			}
+
+		} catch (IOException e) {
+			System.out.println("Error writing to file.");
+		}
 	}
 }
