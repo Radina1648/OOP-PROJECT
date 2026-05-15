@@ -11,15 +11,22 @@ public class BooksAddCommand implements Command {
     private Library library;
     private UserManager userManager;
     private Scanner scanner;
+    private CommandManager manager;
 
-    public BooksAddCommand(Library library, UserManager userManager, Scanner scanner) {
+    public BooksAddCommand(Library library, UserManager userManager, Scanner scanner, CommandManager manager) {
         this.library = library;
         this.userManager = userManager;
         this.scanner = scanner;
+        this.manager = manager;
     }
 
     @Override
     public void execute(String input) {
+
+        if (manager.getCurrentFile() == null) {
+            System.out.println("No file opened.");
+            return;
+        }
 
         if (userManager.getLoggedUser() == null ||
                 !userManager.getLoggedUser().isAdmin()) {
@@ -33,6 +40,11 @@ public class BooksAddCommand implements Command {
 
         System.out.print("Title: ");
         String title = scanner.nextLine();
+
+        if (title.isBlank()) {
+            System.out.println("Title cannot be empty.");
+            return;
+        }
 
         System.out.print("Genre: ");
         String genre = scanner.nextLine();
@@ -49,8 +61,18 @@ public class BooksAddCommand implements Command {
         System.out.print("Rating: ");
         double rating = Double.parseDouble(scanner.nextLine());
 
+        if (rating < 0 || rating > 5) {
+            System.out.println("Rating must be between 0 and 5.");
+            return;
+        }
+
         System.out.print("ISBN: ");
         String isbn = scanner.nextLine();
+
+        if (library.getBookByIsbn(isbn) != null) {
+            System.out.println("Book already exists.");
+            return;
+        }
 
         Book book = new Book(author, title, genre, description, year, tags, rating, isbn);
 

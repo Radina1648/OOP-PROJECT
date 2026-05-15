@@ -20,7 +20,7 @@ public class Book {
 		this.year=year;
 		this.tags=tags;
 		this.rating=rating;
-		isbn=generateIsbn();
+		this.isbn = isbn;
 	}
 
 	public String getAuthor() {

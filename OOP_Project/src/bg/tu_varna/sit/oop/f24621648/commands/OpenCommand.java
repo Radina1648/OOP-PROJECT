@@ -2,6 +2,9 @@ package bg.tu_varna.sit.oop.f24621648.commands;
 
 import bg.tu_varna.sit.oop.f24621648.main.Library;
 
+import java.io.File;
+import java.io.IOException;
+
 public class OpenCommand implements Command {
 
     private Library library;
@@ -24,9 +27,23 @@ public class OpenCommand implements Command {
 
         String fileName = parts[1];
 
-        library.loadFromFile(fileName);
-        manager.setCurrentFile(fileName);
+        try {
 
-        System.out.println("Successfully opened " + fileName);
+            File file = new File(fileName);
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            library.loadFromFile(fileName);
+
+            manager.setCurrentFile(fileName);
+
+            System.out.println("Successfully opened " + fileName);
+
+        } catch (IOException e) {
+
+            System.out.println("Error opening file.");
+        }
     }
 }

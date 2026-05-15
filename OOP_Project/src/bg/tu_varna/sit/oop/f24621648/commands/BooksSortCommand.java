@@ -9,13 +9,16 @@ import java.util.List;
 public class BooksSortCommand implements Command {
 
     private Library library;
+    private CommandManager manager;
 
-    public BooksSortCommand(Library library) {
+    public BooksSortCommand(Library library,  CommandManager manager) {
         this.library = library;
+        this.manager = manager;
     }
 
     @Override
     public void execute(String input) {
+        if (manager.getCurrentFile() == null) { System.out.println("No file opened."); return; }
 
         String[] parts = input.split(" ");
 

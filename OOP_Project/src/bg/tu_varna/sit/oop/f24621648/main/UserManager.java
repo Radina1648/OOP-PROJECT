@@ -1,8 +1,6 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class UserManager {

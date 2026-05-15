@@ -14,6 +14,7 @@ public class SaveAsCommand implements Command {
 
     @Override
     public void execute(String input) {
+        if (manager.getCurrentFile() == null) { System.out.println("No file opened."); return; }
 
         String[] parts = input.split(" ");
 

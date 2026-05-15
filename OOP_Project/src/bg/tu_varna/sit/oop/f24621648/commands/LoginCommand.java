@@ -1,7 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+import bg.tu_varna.sit.oop.f24621648.main.PasswordReader;
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class LoginCommand implements Command {
@@ -18,7 +20,7 @@ public class LoginCommand implements Command {
 	public void execute(String input) {
 
 		if (userManager.getLoggedUser() != null) {
-			System.out.println("You are already logged in.");
+			System.out.println("Already logged in.");
 			return;
 		}
 
@@ -26,9 +28,9 @@ public class LoginCommand implements Command {
 		String username = scanner.nextLine();
 
 		System.out.print("Password: ");
-		String password = scanner.nextLine();
+		String password = PasswordReader.readPassword();
 
-		System.out.println("*".repeat(password.length()));
+		scanner.nextLine();
 
 		System.out.println(userManager.login(username, password));
 	}

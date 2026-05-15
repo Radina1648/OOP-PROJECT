@@ -5,22 +5,22 @@ import bg.tu_varna.sit.oop.f24621648.main.Library;
 public class SaveCommand implements Command {
 
     private Library library;
-    private String currentFile;
+    private CommandManager manager;
 
-    public SaveCommand(Library library, String currentFile) {
+    public SaveCommand(Library library, CommandManager manager) {
         this.library = library;
-        this.currentFile = currentFile;
+        this.manager = manager;
     }
 
     @Override
     public void execute(String input) {
 
-        if (currentFile == null) {
+        if (manager.getCurrentFile() == null) {
             System.out.println("No file opened.");
             return;
         }
 
-        library.saveToFile(currentFile);
+        library.saveToFile(manager.getCurrentFile());
 
         System.out.println("Successfully saved.");
     }

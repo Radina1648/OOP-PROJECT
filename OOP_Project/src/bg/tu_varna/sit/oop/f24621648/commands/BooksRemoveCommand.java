@@ -8,14 +8,17 @@ public class BooksRemoveCommand implements Command {
 
     private Library library;
     private UserManager userManager;
+    private CommandManager manager;
 
-    public BooksRemoveCommand(Library library, UserManager userManager) {
+    public BooksRemoveCommand(Library library, UserManager userManager, CommandManager manager) {
         this.library = library;
         this.userManager = userManager;
+        this.manager= manager;
     }
 
     @Override
     public void execute(String input) {
+        if (manager.getCurrentFile() == null) { System.out.println("No file opened."); return; }
 
         if (userManager.getLoggedUser() == null ||
                 !userManager.getLoggedUser().isAdmin()) {
