@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
+/**
+ * Клас за управление на библиотеката.
+ */
+
 import java.io.*;
 import java.util.*;
 
@@ -7,9 +11,17 @@ public class Library {
 
 	private List<Book> books = new ArrayList<>();
 
+	/**
+	 * Добавя книга в библиотеката.
+	 */
+
 	public void addBook(Book book){
 		books.add(book);
 	}
+
+/**
+ * Премахва книга по ISBN.
+ */
 
 	public void removeBook(String isbn){
 
@@ -30,6 +42,10 @@ public class Library {
 	public List<Book> getAllBooks(){
 		return books;
 	}
+
+	/**
+	 * Търси книга по ISBN.
+	 */
 
 	public Book getBookByIsbn(String isbn){
 
@@ -128,6 +144,10 @@ public class Library {
 		books.clear();
 	}
 
+	/**
+	 * Зарежда книги от файл.
+	 */
+
 	public void loadFromFile(String fileName) {
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -158,6 +178,10 @@ public class Library {
 			System.out.println("Error reading file.");
 		}
 	}
+
+/**
+ * Записва книги във файл.
+ */
 
 	public void saveToFile(String fileName) {
 

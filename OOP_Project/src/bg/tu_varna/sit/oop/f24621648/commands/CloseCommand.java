@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Команда за затваряне на файл.
+ */
+
 import bg.tu_varna.sit.oop.f24621648.main.Library;
 
 public class CloseCommand implements Command {

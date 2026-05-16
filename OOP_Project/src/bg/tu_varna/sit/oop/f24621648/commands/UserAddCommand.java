@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Команда за добавяне на нов потребител.
+ */
+
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
 public class UserAddCommand implements Command {

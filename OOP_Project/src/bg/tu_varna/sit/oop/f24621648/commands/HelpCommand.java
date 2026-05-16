@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Показва всички налични команди.
+ */
+
 public class HelpCommand implements Command {
 
     @Override

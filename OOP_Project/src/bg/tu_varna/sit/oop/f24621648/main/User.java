@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
+/**
+ * Клас, описващ потребител в системата.
+ */
+
 public class User {
     private String username;
     private String password;

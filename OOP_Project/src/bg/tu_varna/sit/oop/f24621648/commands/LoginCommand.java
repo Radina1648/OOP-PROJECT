@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Команда за вход в системата.
+ */
+
 import bg.tu_varna.sit.oop.f24621648.main.PasswordReader;
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 

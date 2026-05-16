@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Прекратява изпълнението на програмата.
+ */
+
 public class ExitCommand implements Command {
 
     @Override

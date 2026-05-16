@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Команда за добавяне на книга.
+ */
+
 import bg.tu_varna.sit.oop.f24621648.main.Book;
 import bg.tu_varna.sit.oop.f24621648.main.Library;
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;

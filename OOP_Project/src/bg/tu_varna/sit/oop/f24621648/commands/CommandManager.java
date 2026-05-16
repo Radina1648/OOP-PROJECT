@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.commands;
 
+/**
+ * Клас за обработка на командите.
+ */
+
 import bg.tu_varna.sit.oop.f24621648.main.Library;
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
@@ -51,6 +55,10 @@ public class CommandManager {
 		UserRemoveCommand userRemoveCommand=new UserRemoveCommand(userManager);
 		commands.put("userremove", userRemoveCommand);
 	}
+
+/**
+ * Обработва въведена команда.
+ */
 
 	public void process(String input)
 	{

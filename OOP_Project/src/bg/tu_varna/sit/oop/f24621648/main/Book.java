@@ -1,6 +1,8 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
-import java.util.Random;
+/**
+ * Клас, описващ книга в библиотеката.
+ */
 
 public class Book {
 	private String author;
@@ -52,15 +54,6 @@ public class Book {
 	}
 
 	public String getIsbn() {
-		return isbn;
-	}
-
-	public String generateIsbn(){
-		Random rand=new Random();
-		String isbn = "";
-		for (int i = 0; i < 13; i++) {
-			isbn += rand.nextInt(10);
-		}
 		return isbn;
 	}
 

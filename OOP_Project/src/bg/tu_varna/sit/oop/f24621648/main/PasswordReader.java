@@ -1,5 +1,9 @@
 package bg.tu_varna.sit.oop.f24621648.main;
 
+/**
+ * Клас за прочитане и маскиране на парола.
+ */
+
 import java.io.IOException;
 
 public class PasswordReader {
