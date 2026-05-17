@@ -13,15 +13,19 @@ public class Library {
 
 	/**
 	 * Добавя книга в библиотеката.
+	 *
+	 * @param book книга за добавяне
 	 */
 
 	public void addBook(Book book){
 		books.add(book);
 	}
 
-/**
- * Премахва книга по ISBN.
- */
+	/**
+	 * Премахва книга по ISBN.
+	 *
+	 * @param isbn ISBN номер на книгата
+	 */
 
 	public void removeBook(String isbn){
 
@@ -44,7 +48,10 @@ public class Library {
 	}
 
 	/**
-	 * Търси книга по ISBN.
+	 * Връща книга по ISBN.
+	 *
+	 * @param isbn ISBN номер
+	 * @return намерена книга или null
 	 */
 
 	public Book getBookByIsbn(String isbn){
@@ -62,6 +69,13 @@ public class Library {
 		return !books.isEmpty();
 	}
 
+	/**
+	 * Търси книги по заглавие.
+	 *
+	 * @param title заглавие за търсене
+	 * @return списък с намерени книги
+	 */
+
 	public List<Book> findByTitle(String title){
 
 		List<Book> result = new ArrayList<>();
@@ -75,6 +89,13 @@ public class Library {
 		return result;
 	}
 
+	/**
+	 * Търси книги по автор.
+	 *
+	 * @param author автор за търсене
+	 * @return списък с намерени книги
+	 */
+
 	public List<Book> findByAuthor(String author){
 
 		List<Book> result = new ArrayList<>();
@@ -87,6 +108,13 @@ public class Library {
 
 		return result;
 	}
+
+	/**
+	 * Търси книги по таг.
+	 *
+	 * @param tag таг за търсене
+	 * @return списък с намерени книги
+	 */
 
 	public List<Book> findByTag(String tag){
 
@@ -106,6 +134,14 @@ public class Library {
 
 		return result;
 	}
+
+	/**
+	 * Сортира книгите.
+	 *
+	 * @param option критерий за сортиране
+	 * @param order посока на сортиране
+	 * @return сортиран списък с книги
+	 */
 
 	public List<Book> sortBooks(String option, String order) {
 
@@ -140,12 +176,18 @@ public class Library {
 		return sortedBooks;
 	}
 
+	/**
+	 * Изчиства библиотеката.
+	 */
+
 	public void clear() {
 		books.clear();
 	}
 
 	/**
 	 * Зарежда книги от файл.
+	 *
+	 * @param fileName име на файла
 	 */
 
 	public void loadFromFile(String fileName) {
@@ -179,9 +221,11 @@ public class Library {
 		}
 	}
 
-/**
- * Записва книги във файл.
- */
+	/**
+	 * Записва книги във файл.
+	 *
+	 * @param fileName име на файла
+	 */
 
 	public void saveToFile(String fileName) {
 

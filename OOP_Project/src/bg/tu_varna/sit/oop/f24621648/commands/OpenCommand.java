@@ -19,6 +19,12 @@ public class OpenCommand implements Command {
         this.manager = manager;
     }
 
+    /**
+     * Отваря файл.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

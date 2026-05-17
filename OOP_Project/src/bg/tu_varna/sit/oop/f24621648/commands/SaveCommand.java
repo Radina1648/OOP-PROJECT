@@ -16,6 +16,12 @@ public class SaveCommand implements Command {
         this.manager = manager;
     }
 
+    /**
+     * Записва информацията във файла.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

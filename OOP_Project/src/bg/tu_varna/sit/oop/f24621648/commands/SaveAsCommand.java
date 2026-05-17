@@ -16,6 +16,12 @@ public class SaveAsCommand implements Command {
         this.manager = manager;
     }
 
+    /**
+     * Записва информацията в нов файл.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
         if (manager.getCurrentFile() == null) { System.out.println("No file opened."); return; }

@@ -14,6 +14,12 @@ public class UserAddCommand implements Command {
         this.userManager = userManager;
     }
 
+    /**
+     * Добавя нов потребител.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

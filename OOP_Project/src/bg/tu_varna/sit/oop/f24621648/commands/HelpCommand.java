@@ -5,25 +5,34 @@ package bg.tu_varna.sit.oop.f24621648.commands;
  */
 
 public class HelpCommand implements Command {
+    /**
+     * Извежда всички поддържани команди.
+     *
+     * @param input входна команда
+     */
 
     @Override
     public void execute(String input) {
 
-        System.out.println("Supported commands:");
-        System.out.println("open <file>");
-        System.out.println("close");
-        System.out.println("save");
-        System.out.println("saveas <file>");
-        System.out.println("login");
-        System.out.println("logout");
-        System.out.println("books all");
-        System.out.println("books info <isbn>");
-        System.out.println("books find <word>");
-        System.out.println("books sort <option>");
-        System.out.println("books add");
-        System.out.println("books remove <isbn>");
-        System.out.println("user add");
-        System.out.println("user remove");
-        System.out.println("exit");
+        StringBuilder help = new StringBuilder();
+
+        help.append("Supported commands:\n");
+        help.append("open <file>\n");
+        help.append("close\n");
+        help.append("save\n");
+        help.append("saveas <file>\n");
+        help.append("login\n");
+        help.append("logout\n");
+        help.append("books all\n");
+        help.append("books info <isbn>\n");
+        help.append("books find <option> <value>\n");
+        help.append("books sort <option>\n");
+        help.append("books add\n");
+        help.append("books remove <isbn>\n");
+        help.append("user add <username> <password>\n");
+        help.append("user remove <username>\n");
+        help.append("exit\n");
+
+        System.out.println(help);
     }
 }

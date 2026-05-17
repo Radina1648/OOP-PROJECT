@@ -7,6 +7,11 @@ package bg.tu_varna.sit.oop.f24621648.main;
 import java.io.IOException;
 
 public class PasswordReader {
+    /**
+     * Прочита парола от конзолата.
+     *
+     * @return въведената парола
+     */
 
     public static String readPassword() {
 

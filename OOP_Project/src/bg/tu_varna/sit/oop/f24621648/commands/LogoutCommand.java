@@ -14,6 +14,12 @@ public class LogoutCommand implements Command {
 		this.userManager = userManager;
 	}
 
+	/**
+	 * Изпълнява logout операция.
+	 *
+	 * @param input входна команда
+	 */
+
 	@Override
 	public void execute(String input) {
 		System.out.println(userManager.logout());

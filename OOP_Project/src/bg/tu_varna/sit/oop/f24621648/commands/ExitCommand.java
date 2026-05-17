@@ -5,6 +5,11 @@ package bg.tu_varna.sit.oop.f24621648.commands;
  */
 
 public class ExitCommand implements Command {
+    /**
+     * Прекратява изпълнението на програмата.
+     *
+     * @param input входна команда
+     */
 
     @Override
     public void execute(String input) {

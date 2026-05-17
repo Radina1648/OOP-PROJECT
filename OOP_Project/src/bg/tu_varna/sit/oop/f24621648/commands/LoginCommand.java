@@ -20,6 +20,12 @@ public class LoginCommand implements Command {
 		this.scanner = scanner;
 	}
 
+	/**
+	 * Изпълнява login операция.
+	 *
+	 * @param input входна команда
+	 */
+
 	@Override
 	public void execute(String input) {
 

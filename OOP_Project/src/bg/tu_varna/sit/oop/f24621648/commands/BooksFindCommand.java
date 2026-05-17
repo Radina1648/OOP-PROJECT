@@ -20,6 +20,12 @@ public class BooksFindCommand implements Command {
 		this.manager = manager;
 	}
 
+	/**
+	 * Търси книги по зададен критерий.
+	 *
+	 * @param input входна команда
+	 */
+
 	@Override
 	public void execute(String input) {
 		if (manager.getCurrentFile() == null) { System.out.println("No file opened."); return; }

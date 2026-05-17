@@ -20,9 +20,13 @@ public class UserManager {
 		users.put("admin",new User("admin", "i<3Java", true));
 	}
 
-/**
- * Проверява login информацията.
- */
+	/**
+	 * Проверява login информацията.
+	 *
+	 * @param username потребителско име
+	 * @param password парола
+	 * @return резултат от login операцията
+	 */
 
 	public String login(String username, String password) {
 
@@ -30,7 +34,6 @@ public class UserManager {
 			return "You are already logged in.";
 		}
 
-		// Търсене на потребител по username
 		User user = users.get(username);
 
 		if (user == null) {
@@ -45,9 +48,11 @@ public class UserManager {
 		return "Login successful.";
 	}
 
-/**
- * Излиза от текущия профил.
- */
+	/**
+	 * Излиза от текущия профил.
+	 *
+	 * @return резултат от logout операцията
+	 */
 
 	public String logout() {
 		if (loggedUser == null) {
@@ -59,26 +64,29 @@ public class UserManager {
 	}
 
 	/**
-	 * Връща текущо логнатия потребител.
+	 * Връща текущо влязлия потребител.
+	 *
+	 * @return влязлия потребител
 	 */
 
 	public User getLoggedUser() {
 		return loggedUser;
 	}
 
-/**
- * Добавя нов потребител.
- */
+	/**
+	 * Добавя нов потребител.
+	 *
+	 * @param username потребителско име
+	 * @param password парола
+	 * @return резултат от операцията
+	 */
 
 	public String addUser(String username, String password) {
-
-		//Само администратор може да добавя потребители
 
 		if (loggedUser == null || !loggedUser.isAdmin()) {
 			return "Only admin can add users.";
 		}
 
-		// Проверка дали потребителят съществува
 		if (users.containsKey(username)) {
 			return "User already exists.";
 		}
@@ -88,7 +96,10 @@ public class UserManager {
 	}
 
 	/**
-	 * Премахва потребител от системата.
+	 * Премахва потребител.
+	 *
+	 * @param username потребителско име
+	 * @return резултат от операцията
 	 */
 
 	public String removeUser(String username) {
@@ -101,7 +112,6 @@ public class UserManager {
 			return "User not found.";
 		}
 
-		// Забранява премахването на admin акаунта
 		if (username.equals("admin")) {
 			return "Admin cannot be removed.";
 		}

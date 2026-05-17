@@ -14,6 +14,12 @@ public class UserRemoveCommand implements Command {
         this.userManager = userManager;
     }
 
+    /**
+     * Премахва потребител.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

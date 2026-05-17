@@ -24,6 +24,12 @@ public class BooksAddCommand implements Command {
         this.manager = manager;
     }
 
+    /**
+     * Добавя нова книга.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

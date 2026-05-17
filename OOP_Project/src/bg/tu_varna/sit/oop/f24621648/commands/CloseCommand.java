@@ -16,6 +16,12 @@ public class CloseCommand implements Command {
         this.manager = manager;
     }
 
+    /**
+     * Затваря текущия файл.
+     *
+     * @param input входна команда
+     */
+
     @Override
     public void execute(String input) {
 

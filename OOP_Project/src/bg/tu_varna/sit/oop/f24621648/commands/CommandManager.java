@@ -18,6 +18,13 @@ public class CommandManager {
 	private Scanner scanner;
 	private String currentFile = null;
 
+	/**
+	 * Създава CommandManager.
+	 *
+	 * @param library библиотека с книги
+	 * @param userManager мениджър на потребители
+	 */
+
 	public CommandManager(Library library, UserManager userManager) {
 		this.library = library;
 		this.userManager = userManager;
@@ -56,9 +63,11 @@ public class CommandManager {
 		commands.put("userremove", userRemoveCommand);
 	}
 
-/**
- * Обработва въведена команда.
- */
+	/**
+	 * Обработва въведена команда.
+	 *
+	 * @param input входна команда
+	 */
 
 	public void process(String input)
 	{
@@ -88,9 +97,22 @@ public class CommandManager {
 			System.out.println("Unknown command!");
 		}
 	}
+
+	/**
+	 * Връща текущо отворения файл.
+	 *
+	 * @return име на файла
+	 */
+
 	public String getCurrentFile() {
 		return currentFile;
 	}
+
+	/**
+	 * Задава текущ файл.
+	 *
+	 * @param currentFile име на файла
+	 */
 
 	public void setCurrentFile(String currentFile) {
 		this.currentFile = currentFile;

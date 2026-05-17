@@ -5,5 +5,11 @@ package bg.tu_varna.sit.oop.f24621648.commands;
  */
 
 public interface Command {
+	/**
+	 * Изпълнява команда.
+	 *
+	 * @param input входна команда
+	 */
+
 	void execute(String input);
 }
