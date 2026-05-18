@@ -23,7 +23,11 @@ public class PasswordReader {
 
                 int ch = System.in.read();
 
-                if (ch == '\r' || ch == '\n') {
+                if (ch == '\r') {
+                    continue;
+                }
+
+                if (ch == '\n') {
                     System.out.println();
                     break;
                 }

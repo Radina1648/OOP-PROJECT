@@ -57,10 +57,10 @@ public class CommandManager {
 		commands.put("logout", logoutCommand);
 		LoginCommand loginCommand=new LoginCommand(userManager, scanner);
 		commands.put("login", loginCommand);
-		UserAddCommand userAddCommand=new UserAddCommand(userManager);
-		commands.put("useradd", userAddCommand);
-		UserRemoveCommand userRemoveCommand=new UserRemoveCommand(userManager);
-		commands.put("userremove", userRemoveCommand);
+		UsersAddCommand usersAddCommand =new UsersAddCommand(userManager);
+		commands.put("usersadd", usersAddCommand);
+		UsersRemoveCommand usersRemoveCommand =new UsersRemoveCommand(userManager);
+		commands.put("usersremove", usersRemoveCommand);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class CommandManager {
 
 		if (parts.length >= 2) {
 
-			if (parts[0].equals("books") || parts[0].equals("user")) {
+			if (parts[0].equals("books") || parts[0].equals("users")) {
 				commandName = parts[0] + parts[1];
 			} else if (parts[0].equals("save") && parts[1].equals("as")) {
 				commandName = "saveas";

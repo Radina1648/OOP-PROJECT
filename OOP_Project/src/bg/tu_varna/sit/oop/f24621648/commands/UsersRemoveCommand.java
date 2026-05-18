@@ -6,11 +6,11 @@ package bg.tu_varna.sit.oop.f24621648.commands;
 
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
-public class UserRemoveCommand implements Command {
+public class UsersRemoveCommand implements Command {
 
     private UserManager userManager;
 
-    public UserRemoveCommand(UserManager userManager) {
+    public UsersRemoveCommand(UserManager userManager) {
         this.userManager = userManager;
     }
 
@@ -26,7 +26,7 @@ public class UserRemoveCommand implements Command {
         String[] parts = input.split(" ");
 
         if (parts.length < 3) {
-            System.out.println("Usage: user remove <username>");
+            System.out.println("Usage: users remove <username>");
             return;
         }
 

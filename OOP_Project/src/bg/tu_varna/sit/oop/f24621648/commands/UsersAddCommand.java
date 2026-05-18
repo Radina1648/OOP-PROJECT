@@ -6,11 +6,11 @@ package bg.tu_varna.sit.oop.f24621648.commands;
 
 import bg.tu_varna.sit.oop.f24621648.main.UserManager;
 
-public class UserAddCommand implements Command {
+public class UsersAddCommand implements Command {
 
     private UserManager userManager;
 
-    public UserAddCommand(UserManager userManager) {
+    public UsersAddCommand(UserManager userManager) {
         this.userManager = userManager;
     }
 
@@ -26,7 +26,7 @@ public class UserAddCommand implements Command {
         String[] parts = input.split(" ");
 
         if (parts.length < 4) {
-            System.out.println("Usage: user add <username> <password>");
+            System.out.println("Usage: users add <username> <password>");
             return;
         }
 

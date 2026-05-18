@@ -29,8 +29,8 @@ public class HelpCommand implements Command {
         help.append("books sort <option>\n");
         help.append("books add\n");
         help.append("books remove <isbn>\n");
-        help.append("user add <username> <password>\n");
-        help.append("user remove <username>\n");
+        help.append("users add <username> <password>\n");
+        help.append("users remove <username>\n");
         help.append("exit\n");
 
         System.out.println(help);

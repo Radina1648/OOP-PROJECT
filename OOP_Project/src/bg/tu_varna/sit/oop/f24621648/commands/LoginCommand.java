@@ -40,8 +40,6 @@ public class LoginCommand implements Command {
 		System.out.print("Password: ");
 		String password = PasswordReader.readPassword();
 
-		scanner.nextLine();
-
 		System.out.println(userManager.login(username, password));
 	}
 }
